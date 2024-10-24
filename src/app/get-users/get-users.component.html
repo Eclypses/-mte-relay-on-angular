@@ -1,0 +1,29 @@
+<style>
+  pre {
+    background-color: rgba(0, 0, 0, 0.1);
+    max-height: 400px;
+    overflow: scroll;
+  }
+</style>
+<div>
+  <h3>Get Users</h3>
+  <button (click)="getUsers()">Get Users</button>
+  @if (loading) {
+  <p>Loading...</p>
+  } @if (usersJson) {
+  <code>
+    <pre>{{ usersJson }}</pre>
+  </code>
+  }
+  <br />
+  <h3>Get User By Id</h3>
+  <input type="text" [(ngModel)]="userId" placeholder="Enter User Id" />
+  <button (click)="getUserById()">Get User By Id</button>
+  @if (loading) {
+  <p>Loading...</p>
+  } @if (userJson) {
+  <code>
+    <pre style="overflow: hidden; max-height: unset">{{ userJson }}</pre>
+  </code>
+  }
+</div>
